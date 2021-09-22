@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.simpleapps22.mind_mentalhealth.ui.login.LoginFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_illnessTypesFragment"
+            app:destination="@id/illnessTypesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/illnessTypesFragment"
+        android:name="com.simpleapps22.mind_mentalhealth.IllnessTypesFragment"
+        android:label="fragment_illness_list"
+        tools:layout="@layout/fragment_illness_list" />
+
+</navigation>
