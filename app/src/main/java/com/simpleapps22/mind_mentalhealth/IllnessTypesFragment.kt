@@ -38,7 +38,7 @@ class IllnessTypesFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = IllnessTypesRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                adapter = IllnessTypesRecyclerViewAdapter(PlaceholderContent.ILLNESSES)
             }
         }
         return view

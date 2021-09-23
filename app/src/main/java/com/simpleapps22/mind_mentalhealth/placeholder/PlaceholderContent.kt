@@ -14,12 +14,12 @@ object PlaceholderContent {
     /**
      * An array of sample (placeholder) items.
      */
-    val ITEMS: MutableList<PlaceholderItem> = ArrayList()
+    val ILLNESSES: MutableList<PlaceholderItem> = ArrayList()
 
     /**
      * A map of sample (placeholder) items, by ID.
      */
-    val ITEM_MAP: MutableMap<String, PlaceholderItem> = HashMap()
+    val ILLNESSES_MAP: MutableMap<String, PlaceholderItem> = HashMap()
 
     private val COUNT = 25
 
@@ -31,8 +31,8 @@ object PlaceholderContent {
     }
 
     private fun addItem(item: PlaceholderItem) {
-        ITEMS.add(item)
-        ITEM_MAP.put(item.id, item)
+        ILLNESSES.add(item)
+        ILLNESSES_MAP.put(item.id, item)
     }
 
     private fun createPlaceholderItem(position: Int): PlaceholderItem {

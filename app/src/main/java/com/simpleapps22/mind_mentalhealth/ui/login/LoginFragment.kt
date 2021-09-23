@@ -7,15 +7,14 @@ import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.view.inputmethod.EditorInfo
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.simpleapps22.mind_mentalhealth.databinding.FragmentLoginBinding
 
 import com.simpleapps22.mind_mentalhealth.R
@@ -36,8 +35,21 @@ class LoginFragment : Fragment() {
     ): View? {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //navigate to the Fragment that has the same id as the selected menu item
+        return NavigationUI.
+        onNavDestinationSelected(item,requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -105,8 +117,12 @@ class LoginFragment : Fragment() {
         }
 
         loginButton.setOnClickListener {
-                view : View ->
-            view.findNavController().navigate(R.id.action_loginFragment_to_illnessTypesFragment)
+            if (usernameEditText.text.toString()== passwordEditText.text.toString()) {
+                view.findNavController().navigate(R.id.action_loginFragment_to_something_Went_Wrong)
+
+            } else {
+                view.findNavController().navigate(R.id.action_loginFragment_to_illnessTypesFragment)
+            }
 
 //            loadingProgressBar.visibility = View.VISIBLE
 //            loginViewModel.login(

@@ -9,4 +9,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="something_went_wrong">OOOps! Something Went Wrong. Try Again!</string>
+    <string name="about_fragment">We are on this attachment to work on a mental health care app!</string>
+    <string name="about_menu">About</string>
+    <string name="login_nav_menu">Login</string>
 </resources>

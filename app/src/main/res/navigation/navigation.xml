@@ -13,11 +13,26 @@
         <action
             android:id="@+id/action_loginFragment_to_illnessTypesFragment"
             app:destination="@id/illnessTypesFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_something_Went_Wrong"
+            app:destination="@id/something_Went_Wrong"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/illnessTypesFragment"
         android:name="com.simpleapps22.mind_mentalhealth.IllnessTypesFragment"
         android:label="fragment_illness_list"
         tools:layout="@layout/fragment_illness_list" />
+    <fragment
+        android:id="@+id/something_Went_Wrong"
+        android:name="com.simpleapps22.mind_mentalhealth.Something_Went_Wrong"
+        android:label="fragment_something__went__wrong"
+        tools:layout="@layout/fragment_something__went__wrong" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.simpleapps22.mind_mentalhealth.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 
 </navigation>
